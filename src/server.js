@@ -39,6 +39,7 @@ class Server {
         this.app.use(express.json())
         this.app.use(cors())
         this.app.use('/doc', swaggerServe, swaggerSetup);
+        this.app.get('/', (req, res)=>res.json({ok: true, msg:'welcome'}))
         // Server.app.use('/', express.static(path.join(__dirname, '../public')));
     }
 
